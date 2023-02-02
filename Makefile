@@ -38,6 +38,9 @@ else
     	# macOS
         prefix := $(prefix)/Library/texmf
     endif
+    ifeq ($(detected_OS),Linux)
+        prefix := $(prefix)/texmf
+    endif
 endif
 texdir = $(prefix)/tex/inputs
 docdir = $(texdir)/doc
@@ -118,7 +121,6 @@ example: example.pdf
 
 example.pdf: rechnung.sty example.tex
 	pdflatex example.tex
-	
 
 manual.ps.gz: manual.ps
 	gzip < $< > $@
