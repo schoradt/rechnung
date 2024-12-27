@@ -117,7 +117,7 @@ rechnungman.dvi: rechnung.dtx rechnungman.drv rechnung.sty
 	$(RUN_MAKEINDEX)
 	$(RESOLVE_XREF)
 
-test: test/abschlag.pdf
+test: rechnung.sty test/abschlag.pdf
 
 test/%.pdf: test/%.tex
 	cp rechnung.sty test/
