@@ -120,6 +120,7 @@ rechnungman.dvi: rechnung.dtx rechnungman.drv rechnung.sty
 test: test/abschlag.pdf
 
 test/%.pdf: test/%.tex
+	cp rechnung.sty test/
 	cd test; pdflatex $(shell basename $<)
 
 manual.ps.gz: manual.ps
@@ -135,8 +136,7 @@ clean:
 	rm -f *.mp *.rawmp *.[0-9]* \
 	      *.log *.dvi *.aux *.toc *.ilg *.glo *.gls *.idx *.ind \
 	      *.ps *.mpx '#*#' *~ .*~ *.pdf \
-		  test/*.log test/*.pdf test/*.aux
-
+		  test/*.log test/*.pdf test/*.aux test/*.sty
 realclean: clean
 	rm -f rechnung.sty rechnung.drv rechnungman*
 
