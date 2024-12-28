@@ -34,7 +34,7 @@ jobs:
             latex rechnung.ins
             pdflatex rechnung.dtx
       - name: rechnung.pdf speichern
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: rechnung.pdf
           path: rechnung.pdf
